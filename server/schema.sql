@@ -1,5 +1,3 @@
-DROP DATABASE chat;
-
 CREATE DATABASE chat;
 
 USE chat;
@@ -21,15 +19,18 @@ CREATE TABLE roomname (
 
 CREATE TABLE messages (
   /* Describe your table here.*/
-  id INT NOT NULL AUTO_INCREMENT,
+  objectId INT NOT NULL AUTO_INCREMENT,
   text VARCHAR(280),
   roomname_id int NOT NULL,
   user_id INT NOT NULL,
-  PRIMARY KEY (id),
+  PRIMARY KEY (objectId),
   FOREIGN KEY (user_id) REFERENCES user(id),
   FOREIGN KEY (roomname_id) REFERENCES roomname(id)
 );
 
+insert into roomname (roomname) values ('Hack Reactor');
+insert into user (username) values ('JOYCE');
+insert into messages (text, roomname_id, user_id) values ('bu gen gah',1, 1);
 
 /*  Execute this file from the command line by typing:
  *    mysql -u root < server/schema.sql
