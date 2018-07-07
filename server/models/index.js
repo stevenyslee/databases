@@ -1,9 +1,12 @@
 var db = require('../db');
 
+// db.dbConnection.connect();
+
 module.exports = {
   messages: {
     get: function () {
-      
+      connection.query()
+
     }, // a function which produces all the messages
     post: function () {
       
